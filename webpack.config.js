@@ -58,7 +58,8 @@ module.exports = [
             {
                 test: /\.(sc|sa|c)ss$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    // MiniCssExtractPlugin.loader,
+                    'style-loader',
                     "css-loader",
                     "sass-loader"
                 ]}
@@ -78,25 +79,25 @@ module.exports = [
             }),
             new OptimizeCSSAssetsPlugin({})
         ],
-        splitChunks: {
-            cacheGroups: {
-                styles: {
-                    name: 'styles',
-                    test: /\.css$/,
-                    chunks: 'all',
-                    enforce: true
-                }
-            }
-        }
+        // splitChunks: {
+        //     cacheGroups: {
+        //         styles: {
+        //             name: 'styles',
+        //             test: /\.css$/,
+        //             chunks: 'all',
+        //             enforce: true
+        //         }
+        //     }
+        // }
     },
 
 
     plugins: [
         new CleanWebpackPlugin(['dist']),
-        new MiniCssExtractPlugin({
-            filename:  '[name]-[id].css',
-            chunkFilename:  '[id].[hash].css',
-        }),
+        // new MiniCssExtractPlugin({
+        //     filename:  '[name]-[id].css',
+        //     chunkFilename:  '[id].[hash].css',
+        // }),
         new HtmlWebpackPlugin({
             template: path.resolve(root, 'src/index.html'),
             title:'Test',
@@ -122,7 +123,7 @@ module.exports = [
         entry: {
             test:'./src/test.js',
             // lib:'./src/lib.js',
-            another: './src/another.js',
+            // another: './src/another.js',
 
         },
         output: {
@@ -132,68 +133,71 @@ module.exports = [
         },
         module: {
             rules: [{
-                test:/\.css$/,
+                test: /\.(sc|sa|c)ss$/,
                 use: [
                     // MiniCssExtractPlugin.loader,
                     'style-loader',
-                     'css-loader']
+                     'css-loader',
+                    'sass-loader'
+                ]
             },
-                {
-                    test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-                    loader: 'url-loader?limit=100000'
-                },
-                {
-                    // test: value là chuỗi regex so khớp với các định dạng file, khi trình phân tích đi qua test nó sẽ nạp các file này để chuẩn bị cho quá trình xử lý
-                    test: /\.html$/,
-
-                    use: [
-
-                        {
-                            loader: 'html-loader',
-                            options: {
-                                // minimize: true,
-                                removeComments: true,
-                                collapseWhitespace: true,
-                                minifyCSS:true,
-                            },
-                        }],
-                }]
+                // {
+                //     test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+                //     loader: 'url-loader?limit=100000'
+                // },
+                // {
+                //     // test: value là chuỗi regex so khớp với các định dạng file, khi trình phân tích đi qua test nó sẽ nạp các file này để chuẩn bị cho quá trình xử lý
+                //     test: /\.html$/,
+                //
+                //     use: [
+                //
+                //         {
+                //             loader: 'html-loader',
+                //             options: {
+                //                 // minimize: true,
+                //                 removeComments: true,
+                //                 collapseWhitespace: true,
+                //                 minifyCSS:true,
+                //             },
+                //         }],
+                // }
+            ]
         },
-        optimization: {
-            splitChunks: {
-                chunks: "all",
-                // Kích thước tối thiểu, tính theo byte, cho một đoạn được tạo ra.
-                minSize: 0,
-            //     maxSize: 0,
-            //     minChunks: 1,
-            //     maxAsyncRequests: 5,
-            //     maxInitialRequests: 3,
-            //     automaticNameDelimiter: '~',
-            //     name: true,
-            //     cacheGroups: {
-            //         vendors: {
-            //             test: /[\\/]node_modules[\\/]/,
-            //             priority: -10
-            //         },
-            //         default: {
-            //             minChunks: 2,
-            //             priority: -20,
-            //             reuseExistingChunk: true
-            //         }
-            //     }
-            }
-        },
-        plugins: [
-            new CleanWebpackPlugin(['dist']),
-            new MiniCssExtractPlugin({
-                filename: 'test.css',
-                chunkFilename:  '[id].test.css',
-            }),
-            new HtmlWebpackPlugin({
-                title: 'Code Splitting'
-            })
-
-        ]
+        // optimization: {
+        //     splitChunks: {
+        //         chunks: "all",
+        //         // Kích thước tối thiểu, tính theo byte, cho một đoạn được tạo ra.
+        //         minSize: 0,
+        //     //     maxSize: 0,
+        //     //     minChunks: 1,
+        //     //     maxAsyncRequests: 5,
+        //     //     maxInitialRequests: 3,
+        //     //     automaticNameDelimiter: '~',
+        //     //     name: true,
+        //     //     cacheGroups: {
+        //     //         vendors: {
+        //     //             test: /[\\/]node_modules[\\/]/,
+        //     //             priority: -10
+        //     //         },
+        //     //         default: {
+        //     //             minChunks: 2,
+        //     //             priority: -20,
+        //     //             reuseExistingChunk: true
+        //     //         }
+        //     //     }
+        //     }
+        // },
+        // plugins: [
+        //     new CleanWebpackPlugin(['dist']),
+        //     new MiniCssExtractPlugin({
+        //         filename: 'test.css',
+        //         chunkFilename:  '[id].test.css',
+        //     }),
+        //     new HtmlWebpackPlugin({
+        //         title: 'Code Splitting'
+        //     })
+        //
+        // ]
 
     }
 ];

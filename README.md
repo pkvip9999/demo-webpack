@@ -46,6 +46,34 @@ Webpack hiện đang là module loader được sử dụng rộng rãi nhất h
 
 ### Phan se demo
 
+[Cau truc co ban cua file webpack](https://webpack.js.org/configuration/)
+
+development        Đặt process.env.NODE_ENVtrên DefinePlugingiá trị development. Cho phép NamedChunksPluginvà NamedModulesPlugin.
+
+
+
+
+production     Đặt process.env.NODE_ENVtrên DefinePlugingiá trị production. Cho phép FlagDependencyUsagePlugin, FlagIncludedChunksPlugin, ModuleConcatenationPlugin, NoEmitOnErrorsPlugin, OccurrenceOrderPlugin, SideEffectsFlagPluginvà UglifyJsPlugin.
+
+
+
+none   Chọn không tham gia bất kỳ tùy chọn tối ưu hóa mặc định nào
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Code splitting (chia nhỏ code) là một trong những tính năng làm nên tên tuổi của Webpack. Và với riêng bản thân mình thấy thì đây chính là tính năng có giá trị nhất của webpack.
 

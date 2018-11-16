@@ -1,4 +1,4 @@
-import _ from 'lodash';
+// import _ from 'lodash';
 // import '../assets/xinchao.css'
 // import '../node_modules/bootstrap/dist/css/bootstrap.css'
 // import 'jquery';
@@ -6,8 +6,8 @@ import _ from 'lodash';
 //     _.join(['Index', 'module', 'loaded!'], ' ')
 // );
 // import 'jquery/dist/jquery'
-import 'bootstrap/dist/css/bootstrap.css'
+import 'src/scss/style.scss'
 
-import users from './lib';
+// import users from './lib';
 
-const adam = _.find(users, { firstName: 'Adam' });
+// const adam = _.find(users, { firstName: 'Adam' });
