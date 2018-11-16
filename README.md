@@ -48,16 +48,16 @@ Webpack hiện đang là module loader được sử dụng rộng rãi nhất h
 
 [Cau truc co ban cua file webpack](https://webpack.js.org/configuration/)
 
-development        Đặt process.env.NODE_ENVtrên DefinePlugingiá trị development. Cho phép NamedChunksPluginvà NamedModulesPlugin.
+development     :   Đặt process.env.NODE_ENVtrên DefinePlugingiá trị development. Cho phép NamedChunksPluginvà NamedModulesPlugin.
 
 
 
 
-production     Đặt process.env.NODE_ENVtrên DefinePlugingiá trị production. Cho phép FlagDependencyUsagePlugin, FlagIncludedChunksPlugin, ModuleConcatenationPlugin, NoEmitOnErrorsPlugin, OccurrenceOrderPlugin, SideEffectsFlagPluginvà UglifyJsPlugin.
+production :    Đặt process.env.NODE_ENVtrên DefinePlugingiá trị production. Cho phép FlagDependencyUsagePlugin, FlagIncludedChunksPlugin, ModuleConcatenationPlugin, NoEmitOnErrorsPlugin, OccurrenceOrderPlugin, SideEffectsFlagPluginvà UglifyJsPlugin.
 
 
 
-none   Chọn không tham gia bất kỳ tùy chọn tối ưu hóa mặc định nào
+none :  Chọn không tham gia bất kỳ tùy chọn tối ưu hóa mặc định nào
 
 
 
