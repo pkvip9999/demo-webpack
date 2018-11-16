@@ -11,4 +11,4 @@ import _ from 'lodash';
 // document.body.appendChild(component());
 
 
-require('./scss/style.scss');
+import './scss/style.scss'

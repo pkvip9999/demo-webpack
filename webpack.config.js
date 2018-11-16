@@ -13,9 +13,10 @@ module.exports = [
     //entry – tên của file hoặc một mảng những file mà chúng ta muốn include
     name: "pro",
     entry: {
-        index :['./src/index.js'],
-        js:[  "./src/js/jquery-3.3.1.min.js",
-            "./src/js/bootstrap.min.js"]
+        index :['./src/index.js',"./src/js/jquery-3.3.1.min.js",
+            "./src/js/bootstrap.min.js"],
+        // js:[  "./src/js/jquery-3.3.1.min.js",
+        //     "./src/js/bootstrap.min.js"]
 
 
     },
@@ -29,7 +30,7 @@ module.exports = [
             {
                 // test: value là chuỗi regex so khớp với các định dạng file, khi trình phân tích đi qua test nó sẽ nạp các file này để chuẩn bị cho quá trình xử lý
                 test: /\.html$/,
-
+                include: path.resolve(root, 'src'),
                 use: [
 
                     {

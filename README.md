@@ -1,5 +1,5 @@
 # Webpack cơ bản
-Webpack hiện đang là module loader được sử dụng rộng rãi nhất hiện nay với cộng động support to lớn và những chức năng vô cùng mạnh mẽ. Phiên bản hiện tại là  `v4.1.3`.
+Webpack hiện đang là module loader được sử dụng rộng rãi nhất hiện nay với cộng động support to lớn và những chức năng vô cùng mạnh mẽ. Phiên bản hiện tại là  `v4.25.1`.
 
 ###Vậy Module loader là gì?
 
@@ -35,7 +35,7 @@ Webpack hiện đang là module loader được sử dụng rộng rãi nhất h
 
 4. Gulp có thể xử lý các file tĩnh (css font img )tốt hơn Webpack. Các  Webpack Plugin cũng có thể sao chép tập tin từ nguồn của bạn để xây dựng thư mục của bạn,
 
-5. Gulp compile, tối ưu các file của bạn và ghép chúng lại theo từng loại
+5. Gulp compile, tối ưu các file của bạn và ghép chúng lại theo từng task
 
     webpack đóng gói các file vã các file phụ thuộc thành một file js duy nhất có cấu trúc và chính suất chúng khi cần
     
@@ -75,7 +75,7 @@ none   Chọn không tham gia bất kỳ tùy chọn tối ưu hóa mặc địn
 
 
 
-Code splitting (chia nhỏ code) là một trong những tính năng làm nên tên tuổi của Webpack. Và với riêng bản thân mình thấy thì đây chính là tính năng có giá trị nhất của webpack.
+Code splitting (chia nhỏ code) là một trong những tính năng làm nên tên tuổi của Webpack. đây chính là tính năng có giá trị nhất của webpack.
 
 Code splitting là gì?
 Như cái tên của nó. Nó cho phép chung ta chia nhỏ code ra và chỉ thật tải và execute khi cần đến. Một ví dụ đơn giản là chúng ta sử dụng thư viện select2 cho dự án, thật ra bản thân select2 là 1 library khá nặng và đương nhiên đa phần các page trong dự án của bạn ko cần đến nó, chỉ một vài trang cần và Webpack sẽ detect được khi nào bạn cần và sẽ tách nó ra 1 file riêng để khi nào cần thì gọi. Cái goal ở đây là ngoài việc chúng ta kiếm soát được việc quản lý library thì bên cạnh đó perfomance cũng được cải thiện ở browser thấy 1 thì ở mobile sự cải thiện sẽ rõ rệt hơn rất nhiều vì trên mobile phần cứng đa phần bị giới hạn hơn so với máy tính.
