@@ -1,5 +1,5 @@
 # Webpack cơ bản
-Webpack hiện đang là module loader được sử dụng rộng rãi nhất hiện nay với cộng động support to lớn và những chức năng vô cùng mạnh mẽ. Phiên bản hiện tại là  `v4.25.1`.
+Webpack hiện đang là module loader được sử dụng rộng rãi nhất hiện nay với cộng động support to lớn và những chức năng vô cùng mạnh mẽ. Phiên bản hiện sử dụng  `v4.25.1`.
 
 ###Vậy Module loader là gì?
 
